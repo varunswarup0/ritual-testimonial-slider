@@ -1,38 +1,214 @@
-.App {
+:root {
+  --blue: #142b6f;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #eb4343;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #868e96;
+  --gray-dark: #343a40;
+  --primary: #142b6f;
+  --secondary: #868e96;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #eb4343;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xsm: 0;
+  --breakpoint-sm: 750px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1200px;
+  --font-family-sans-serif: 'LL Circular', -apple-system, BlinkMacSystemFont,
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+}
+
+.title {
+  font-family: LL Circular, sans-serif;
+  font-weight: 500;
+  display: block;
+  font-size: 2.5rem;
+  color: rgb(20, 43, 111);
+  line-height: 2.25rem;
+  letter-spacing: -0.4px;
+  text-align: center !important;
+  margin: 0px 0px 24px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
+}
+.sub-title {
+  font-family: Dutch801, serif;
+  color: rgb(20, 43, 111);
+  font-size: 1rem;
+  line-height: 1.625rem;
+  font-weight: normal;
   text-align: center;
+  letter-spacing: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.TestimonialsCarousel-PullQuote {
+  z-index: 25;
+  font-size: 1.375rem;
+  line-height: 2rem;
+  min-height: 96px;
+  margin-bottom: 16px;
+  position: relative;
+  letter-spacing: -0.5px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  color: #142b6f;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TestimonialsCarousel__Name {
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  color: #142b6f;
+  font-family: LL Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.TestimonialsCarousel__Title {
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+  font-family: Dutch801, serif;
+  font-style: italic;
+  font-weight: 500;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  color: #142b6f;
+  line-height: 1.5;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.pullQuoteEmphasis {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.375rem;
+  line-height: 2rem;
+  letter-spacing: -0.5px;
+  color: #142b6f;
+  font-family: LL Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  font-weight: 400;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.App-link {
-  color: #61dafb;
+.Testimonials__TestimonialsWrapper {
+  padding: 80px 0px;
+  z-index: 2;
+  background: rgba(242, 241, 245, 0.56);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  color: #142b6f;
+  font-family: LL Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slide-1 {
+  position: absolute;
+  top: 0.002rem;
+  left: 10rem;
+  width: 12rem;
+  z-index: 10;
+}
+.slide-2 {
+  position: absolute;
+  top: 0.002rem;
+  left: 25rem;
+  width: 10rem;
+}
+.slide-3 {
+  position: absolute;
+  top: 0.002rem;
+  left: 38rem;
+  width: 10rem;
+}
+
+.play {
+  position: absolute;
+  background-color: none;
+  color: rgba(242, 241, 245, 0.56);
+  /* color: red; */
+  z-index: 15;
+  left: 10.3rem;
+  top: 13rem;
+  font-size: large;
+}
+.left {
+  position: absolute;
+  color: rgb(20, 43, 111);
+  background-color: rgba(242, 241, 245, 0.56);
+  z-index: 15;
+  left: 34rem;
+  top: 11.2rem;
+}
+.right {
+  position: absolute;
+  color: rgb(20, 43, 111);
+  background-color: rgba(242, 241, 245, 0.56);
+  z-index: 15;
+  left: 38rem;
+  top: 11.2rem;
 }

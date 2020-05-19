@@ -1,126 +1,136 @@
 import React from 'react';
 import {
   PlayCircleOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
+  // ArrowLeftOutlined,
+  // ArrowRightOutlined,
 } from '@ant-design/icons';
 import './App.css';
 
-function App() {
-  const slideImages = [
-    'images/person (1)',
-    'images/person (2)',
-    'images/person (3)',
-  ];
-
-  return (
-    <>
-      <div class='Testimonials__TestimonialsWrapper'>
-        <div class='title' style={{ fontWeight: '600' }}>
-          Skeptics Speak
-        </div>
-        <div class='sub-title'>
-          With millions of bottles delivered, discover what Ritual users have to
-          say.
-        </div>
-        <div class='TestimonialsCarousel__CarouselContainer'>
-          <div class='TestimonialsCarousel__Spacer col-3 col-md-3'>
-            <div class='TestimonialsCarousel-PullQuote'>
-              “Everything is sourced with such{' '}
-              <span class='pullQuoteEmphasis'> integrity</span> and{' '}
-              <span class='pullQuoteEmphasis'> responsibility.</span>”
-            </div>
-
-            <div class='TestimonialsCarousel__Name'>Megan Monahan</div>
-            <div class='TestimonialsCarousel__Title'>Meditation Teacher</div>
-            <img
-              class='slide-1'
-              src={require('./images/person (1).jpg')}
-              alt='slide-1'
-            />
-            <img
-              class='slide-2'
-              src={require('./images/person (2).jpg')}
-              alt='slide-2'
-            />
-            <img
-              class='slide-3'
-              src={require('./images/person (3).jpg')}
-              alt='slide-3'
-            />
-            <PlayCircleOutlined className='play' />
-            <ArrowLeftOutlined className='left' />
-            <ArrowRightOutlined className='right' />
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slideImages: [
+        './images/person (1).jpg',
+        './images/person (2).jpg',
+        './images/person (3).jpg',
+        './images/person (4).jpg',
+        './images/person (5).webp',
+        './images/person (6).webp',
+      ],
+    };
+  }
+  render() {
+    return (
+      <>
+        <div className='Testimonials__TestimonialsWrapper'>
+          <div className='title' style={{ fontWeight: '600' }}>
+            Skeptics Speak
           </div>
-        </div>
-        <div
-          id='testimonials-new-carousel_slides_controls'
-          class='TestimonialsCarousel__Controls-sc-1fg86gc-7 eijoTf'
-        >
-          <button
-            id='testimonials-new-carousel_slides_controls_control-button-0'
-            class='TestimonialsCarousel__ControlButton-sc-1fg86gc-8 gczMdK'
+          <div className='sub-title'>
+            With millions of bottles delivered, discover what Ritual users have
+            to say.
+          </div>
+          <div className='TestimonialsCarousel__CarouselContainer'>
+            <div className='TestimonialsCarousel__Spacer col-3 col-md-3'>
+              <div className='TestimonialsCarousel-PullQuote'>
+                “Everything is sourced with such{' '}
+                <span className='pullQuoteEmphasis'> integrity</span> and{' '}
+                <span className='pullQuoteEmphasis'> responsibility.</span>”
+              </div>
+
+              <div className='TestimonialsCarousel__Name'>Megan Monahan</div>
+              <div className='TestimonialsCarousel__Title'>
+                Meditation Teacher
+              </div>
+              <img
+                className='slide-1'
+                src={require(`./images/person (${1}).jpg`)}
+                alt='slide-1'
+              />
+              <img
+                className='slide-2'
+                src={require('./images/person (2).jpg')}
+                alt='slide-2'
+              />
+              <img
+                class='slide-3'
+                src={require('./images/person (3).jpg')}
+                alt='slide-3'
+              />
+              <PlayCircleOutlined className='play' />
+              {/*  <ArrowLeftOutlined className='left' />
+            <ArrowRightOutlined className='right' /> */}
+            </div>
+          </div>
+          <div
+            id='testimonials-new-carousel_slides_controls'
+            class='TestimonialsCarousel__Controls-sc-1fg86gc-7 eijoTf'
           >
-            <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
-              <title></title>
-              <desc></desc>
-              <g
-                fill='none'
-                fill-rule='evenodd'
-                stroke='none'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='1'
-              >
-                <g stroke='#142B6F' stroke-width='2.25'>
-                  <g>
+            <button
+              // id='testimonials-new-carousel_slides_controls_control-button-0'
+              class='TestimonialsCarousel__ControlButton-left'
+            >
+              <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
+                {/* <title></title> */}
+                {/* <desc></desc> */}
+                <g
+                  fill='none'
+                  fill-rule='evenodd'
+                  stroke='none'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='1'
+                >
+                  <g stroke='#142B6F' strokeWidth='2.25'>
+                    {/* <g>
+                    <g>
+                      <g> */}
+                    <path
+                      d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
+                      transform='translate(-776.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(649.500000, 12.000000) scale(-1, 1) translate(-649.500000, -12.000000) translate(642.000000, 8.000000)'
+                    ></path>
+                    {/* </g>
+                    </g>
+                  </g> */}
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <button
+              // id='testimonials-new-carousel_slides_controls_control-button-1'
+              className='TestimonialsCarousel__ControlButton-right'
+            >
+              <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
+                <title></title>
+                <desc></desc>
+                <g
+                  fill='none'
+                  fill-rule='evenodd'
+                  stroke='none'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='1'
+                >
+                  <g stroke='#142B6F' stroke-width='2.25'>
                     <g>
                       <g>
-                        <path
-                          d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
-                          transform='translate(-776.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(649.500000, 12.000000) scale(-1, 1) translate(-649.500000, -12.000000) translate(642.000000, 8.000000)'
-                        ></path>
+                        <g>
+                          <path
+                            d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
+                            transform='translate(-820.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(687.000000, 8.000000)'
+                          ></path>
+                        </g>
                       </g>
                     </g>
                   </g>
                 </g>
-              </g>
-            </svg>
-          </button>
-          <button
-            id='testimonials-new-carousel_slides_controls_control-button-1'
-            class='TestimonialsCarousel__ControlButton-sc-1fg86gc-8 gczMdK'
-          >
-            <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
-              <title></title>
-              <desc></desc>
-              <g
-                fill='none'
-                fill-rule='evenodd'
-                stroke='none'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='1'
-              >
-                <g stroke='#142B6F' stroke-width='2.25'>
-                  <g>
-                    <g>
-                      <g>
-                        <path
-                          d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
-                          transform='translate(-820.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(687.000000, 8.000000)'
-                        ></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </button>
-        </div>
-        <button
-          id='testimonials-new-carousel_slides_play-button'
-          class='TestimonialsCarousel__PlayButton-sc-1fg86gc-10 ivqUHH'
+              </svg>
+            </button>
+          </div>
+          {/* <button
+          // id='testimonials-new-carousel_slides_play-button'
+          className='TestimonialsCarousel__PlayButton'
         >
           <svg
             width='60'
@@ -128,6 +138,7 @@ function App() {
             viewBox='0 0 60 60'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
+            // style={{ backgroundColor: 'none' }}
           >
             <path
               fill-rule='evenodd'
@@ -144,106 +155,11 @@ function App() {
           </svg>
           <div
             direction='forwards'
-            class='TestimonialsCarousel__AnimateOnChange-sc-1fg86gc-5 ghkjOK'
+            className='TestimonialsCarousel__AnimateOnChange-sc-1fg86gc-5 ghkjOK'
           ></div>
-        </button>
-        {/* <Slider {...settings}>
-          <div>
-            <img
-              class='slide-1'
-              src={require('./images/person (1).jpg')}
-              alt='slide-1'
-              style={{ width: '10rem' }}
-            />
-          </div>
-          <div>
-            <img
-              class='slide-2'
-              src={require('./images/person (2).jpg')}
-              alt='slide-2'
-              style={{ width: '10rem' }}
-            />
-          </div>
-          <div>
-            <img
-              class='slide-3'
-              src={require('./images/person (3).jpg')}
-              alt='slide-3'
-            />
-          </div>
-          <div>
-            <img
-              class='slide-4'
-              src={require('./images/person (4).jpg')}
-              alt='slide-4'
-              style={{ width: '10rem' }}
-            />
-          </div>
-          <div>
-            <img
-              class='slide-5'
-              src={require('./images/person (5).webp')}
-              alt='slide-5'
-              style={{ width: '10rem' }}
-            />
-          </div>
-          <div>
-            <img
-              class='slide-6'
-              src={require('./images/person (6).webp')}
-              alt='slide-6'
-              style={{ width: '10rem' }}
-            />
-          </div>
-        </Slider> */}
-
-        {/* <div class='TestimonialsCarousel__Slides'>
-          <div class='TestimonialsCarousel__Slide'>
-            <div
-              style={{
-                transform: 'translateX(0px)',
-                zIndex: '10',
-                visibility: 'visible',
-              }}
-              direction='forwards'
-              class='TestimonialsCarousel__Image'
-            >
-              <div
-                class=' gatsby-image-wrapper'
-                style={{
-                  position: 'absolute',
-                  overflow: 'hidden',
-                  left: '0',
-                  top: '0',
-                  width: '100%',
-                  height: '100%',
-                  userSelect: 'none',
-                  userDrag: 'none',
-                  pointerEvents: 'none',
-                  touchCallout: 'none',
-                }}
-              >
-                <div
-                  aria-hidden='true'
-                  style={{
-                    width: '100%',
-                    paddingBottom: '121.62162162162163%',
-                  }}
-                >
-                  <picture>
-                    <img
-                      src={require('./images/img-testimonial.jpg')}
-                      alt='img-testimonial'
-                    />
-                  </picture>
-                </div>
-              </div>
-            </div>
+        </button> */}
         </div>
-        </div> */}
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
-
-export default App;

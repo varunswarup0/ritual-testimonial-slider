@@ -192,11 +192,11 @@
   color: rgba(255, 255, 255, 0.959);
   /* color: red; */
   z-index: 15;
-  left: 10.3rem;
-  top: 13rem;
-  font-size: larger;
+  left: 10.5rem;
+  top: 12rem;
+  font-size: 2rem;
 }
-.left {
+/* .left {
   position: absolute;
   color: rgb(20, 43, 111);
   background-color: rgba(255, 255, 255, 0.959);
@@ -204,6 +204,8 @@
   left: 34rem;
   top: 11.24rem;
   opacity: 1;
+  outline: none;
+  margin: 0em;
 }
 .right {
   position: absolute;
@@ -212,4 +214,36 @@
   z-index: 15;
   left: 38rem;
   top: 11.24rem;
+} */
+
+.TestimonialsCarousel__ControlButton-left {
+  position: absolute;
+  left: 33.2rem;
+  top: 24.6rem;
+  /* padding: 0; */
+  border: none;
+  /* background: none; */
 }
+.TestimonialsCarousel__ControlButton-right {
+  position: absolute;
+  left: 38rem;
+  top: 24.6rem;
+  border: none;
+}
+
+.TestimonialsCarousel__ControlButton-left:hover {
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.TestimonialsCarousel__ControlButton-right:hover {
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+/* .TestimonialsCarousel__PlayButton {
+  position: absolute;
+  left: 11.3rem;
+  top: 13rem;
+  z-index: 15;
+  background-color: none;
+} */

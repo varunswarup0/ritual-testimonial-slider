@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  PlayCircleOutlined,
-  // ArrowLeftOutlined,
-  // ArrowRightOutlined,
-} from '@ant-design/icons';
+import { PlayCircleOutlined } from '@ant-design/icons';
 import './App.css';
 
 export default class App extends React.Component {
@@ -18,7 +14,18 @@ export default class App extends React.Component {
         './images/person (5).webp',
         './images/person (6).webp',
       ],
+      indexValue: 0,
     };
+    this.handleClickRight = this.handleClickRight.bind(this);
+    this.handleClickLeft = this.handleClickLeft.bind(this);
+  }
+  handleClickRight() {
+    if (this.state.slideImages.length < this.state.indexValue + 4) return;
+    this.setState({ indexValue: this.state.indexValue + 1 });
+  }
+  handleClickLeft() {
+    if (this.state.indexValue < 1) return;
+    this.setState({ indexValue: this.state.indexValue - 1 });
   }
   render() {
     return (
@@ -45,22 +52,26 @@ export default class App extends React.Component {
               </div>
               <img
                 className='slide-1'
-                src={require(`./images/person (${1}).jpg`)}
+                src={require(`${
+                  this.state.slideImages[this.state.indexValue]
+                }`)}
                 alt='slide-1'
               />
               <img
                 className='slide-2'
-                src={require('./images/person (2).jpg')}
+                src={require(`${
+                  this.state.slideImages[this.state.indexValue + 1]
+                }`)}
                 alt='slide-2'
               />
               <img
                 class='slide-3'
-                src={require('./images/person (3).jpg')}
+                src={require(`${
+                  this.state.slideImages[this.state.indexValue + 2]
+                }`)}
                 alt='slide-3'
               />
               <PlayCircleOutlined className='play' />
-              {/*  <ArrowLeftOutlined className='left' />
-            <ArrowRightOutlined className='right' /> */}
             </div>
           </div>
           <div
@@ -68,8 +79,8 @@ export default class App extends React.Component {
             class='TestimonialsCarousel__Controls-sc-1fg86gc-7 eijoTf'
           >
             <button
-              // id='testimonials-new-carousel_slides_controls_control-button-0'
               class='TestimonialsCarousel__ControlButton-left'
+              onClick={this.handleClickLeft}
             >
               <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
                 {/* <title></title> */}
@@ -98,8 +109,8 @@ export default class App extends React.Component {
               </svg>
             </button>
             <button
-              // id='testimonials-new-carousel_slides_controls_control-button-1'
               className='TestimonialsCarousel__ControlButton-right'
+              onClick={this.handleClickRight}
             >
               <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
                 <title></title>
@@ -128,36 +139,6 @@ export default class App extends React.Component {
               </svg>
             </button>
           </div>
-          {/* <button
-          // id='testimonials-new-carousel_slides_play-button'
-          className='TestimonialsCarousel__PlayButton'
-        >
-          <svg
-            width='60'
-            height='60'
-            viewBox='0 0 60 60'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            // style={{ backgroundColor: 'none' }}
-          >
-            <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
-              d='M30 57.5C45.1878 57.5 57.5 45.1878 57.5 30C57.5 14.8122 45.1878 2.5 30 2.5C14.8122 2.5 2.5 14.8122 2.5 30C2.5 45.1878 14.8122 57.5 30 57.5ZM60 30C60 46.5685 46.5685 60 30 60C13.4315 60 0 46.5685 0 30C0 13.4315 13.4315 0 30 0C46.5685 0 60 13.4315 60 30Z'
-              fill='white'
-            ></path>
-            <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
-              d='M27.0976 22.1153C26.8802 21.9748 26.6021 21.9619 26.3734 22.0812C26.1433 22.1998 26 22.4309 26 22.6825V36.3182C26 36.5698 26.1433 36.8009 26.3727 36.9195C26.4772 36.9734 26.5915 37 26.7059 37C26.8428 37 26.9791 36.9611 27.0976 36.8855L37.6859 30.0676C37.8821 29.9408 38 29.7281 38 29.5004C38 29.2726 37.8821 29.0599 37.6859 28.9331L27.0976 22.1153Z'
-              fill='white'
-            ></path>
-          </svg>
-          <div
-            direction='forwards'
-            className='TestimonialsCarousel__AnimateOnChange-sc-1fg86gc-5 ghkjOK'
-          ></div>
-        </button> */}
         </div>
       </>
     );

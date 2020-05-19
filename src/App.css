@@ -223,21 +223,29 @@
   /* padding: 0; */
   border: none;
   /* background: none; */
+  outline: none;
 }
 .TestimonialsCarousel__ControlButton-right {
   position: absolute;
   left: 38rem;
   top: 24.6rem;
   border: none;
+  outline: none;
 }
 
 .TestimonialsCarousel__ControlButton-left:hover {
   font-weight: 900;
   font-size: 1.1rem;
+  outline: none;
 }
 .TestimonialsCarousel__ControlButton-right:hover {
   font-weight: 900;
   font-size: 1.1rem;
+  outline: none;
+}
+
+button {
+  outline: none !important;
 }
 
 /* .TestimonialsCarousel__PlayButton {

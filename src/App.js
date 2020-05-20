@@ -1,14 +1,13 @@
 import React from 'react';
+// import images from './images';
+// import Slider from './components/slider';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import './App.css';
-// import TransitionTest from './TransitionTest';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      appearHome: true,
       slideImages: [
         './images/person (1).jpg',
         './images/person (2).jpg',
@@ -34,10 +33,9 @@ export default class App extends React.Component {
     this.setState({ indexValue: newIndex });
   }
   render() {
-    const { appearHome } = this.state;
     return (
       <>
-        {/* <TransitionTest /> */}
+        {/* <Slider slides={images} /> */}
         <div className='Testimonials__TestimonialsWrapper'>
           <div className='title' style={{ fontWeight: '600' }}>
             Skeptics Speak
@@ -58,21 +56,15 @@ export default class App extends React.Component {
               <div className='TestimonialsCarousel__Title'>
                 Meditation Teacher
               </div>
-              {/* <TransitionGroup className='card-container'> */}
-              <CSSTransition
-                in={appearHome}
-                appear={true}
-                timeout={1000}
-                classNames='fade'
-              >
-                <img
-                  className='slide-1'
-                  src={require(`${
-                    this.state.slideImages[this.state.indexValue]
-                  }`)}
-                  alt='slide-1'
-                />
-              </CSSTransition>
+
+              <img
+                className='slide-1'
+                src={require(`${
+                  this.state.slideImages[this.state.indexValue]
+                }`)}
+                alt='slide-1'
+              />
+
               <img
                 className='slide-2'
                 src={require(`${
@@ -87,6 +79,7 @@ export default class App extends React.Component {
                 }`)}
                 alt='slide-3'
               />
+
               <PlayCircleOutlined className='play' />
               {/* </TransitionGroup> */}
             </div>

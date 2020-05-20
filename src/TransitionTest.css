@@ -1,0 +1,8 @@
+img .slide-1 {
+  position: absolute;
+  top: 0.002rem;
+  left: 10rem;
+  width: 12rem;
+  z-index: 15;
+  opacity: 0;
+}

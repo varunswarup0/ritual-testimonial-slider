@@ -1,11 +1,14 @@
 import React from 'react';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import './App.css';
+// import TransitionTest from './TransitionTest';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      appearHome: true,
       slideImages: [
         './images/person (1).jpg',
         './images/person (2).jpg',
@@ -19,17 +22,22 @@ export default class App extends React.Component {
     this.handleClickRight = this.handleClickRight.bind(this);
     this.handleClickLeft = this.handleClickLeft.bind(this);
   }
+
   handleClickRight() {
     if (this.state.slideImages.length < this.state.indexValue + 4) return;
-    this.setState({ indexValue: this.state.indexValue + 1 });
+    const newIndex = this.state.indexValue + 1;
+    this.setState({ indexValue: newIndex });
   }
   handleClickLeft() {
     if (this.state.indexValue < 1) return;
-    this.setState({ indexValue: this.state.indexValue - 1 });
+    const newIndex = this.state.indexValue - 1;
+    this.setState({ indexValue: newIndex });
   }
   render() {
+    const { appearHome } = this.state;
     return (
       <>
+        {/* <TransitionTest /> */}
         <div className='Testimonials__TestimonialsWrapper'>
           <div className='title' style={{ fontWeight: '600' }}>
             Skeptics Speak
@@ -50,13 +58,21 @@ export default class App extends React.Component {
               <div className='TestimonialsCarousel__Title'>
                 Meditation Teacher
               </div>
-              <img
-                className='slide-1'
-                src={require(`${
-                  this.state.slideImages[this.state.indexValue]
-                }`)}
-                alt='slide-1'
-              />
+              {/* <TransitionGroup className='card-container'> */}
+              <CSSTransition
+                in={appearHome}
+                appear={true}
+                timeout={1000}
+                classNames='fade'
+              >
+                <img
+                  className='slide-1'
+                  src={require(`${
+                    this.state.slideImages[this.state.indexValue]
+                  }`)}
+                  alt='slide-1'
+                />
+              </CSSTransition>
               <img
                 className='slide-2'
                 src={require(`${
@@ -72,6 +88,7 @@ export default class App extends React.Component {
                 alt='slide-3'
               />
               <PlayCircleOutlined className='play' />
+              {/* </TransitionGroup> */}
             </div>
           </div>
           <div
@@ -83,8 +100,6 @@ export default class App extends React.Component {
               onClick={this.handleClickLeft}
             >
               <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
-                {/* <title></title> */}
-                {/* <desc></desc> */}
                 <g
                   fill='none'
                   fill-rule='evenodd'
@@ -94,16 +109,10 @@ export default class App extends React.Component {
                   stroke-width='1'
                 >
                   <g stroke='#142B6F' strokeWidth='2.25'>
-                    {/* <g>
-                    <g>
-                      <g> */}
                     <path
                       d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
                       transform='translate(-776.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(649.500000, 12.000000) scale(-1, 1) translate(-649.500000, -12.000000) translate(642.000000, 8.000000)'
                     ></path>
-                    {/* </g>
-                    </g>
-                  </g> */}
                   </g>
                 </g>
               </svg>
@@ -113,8 +122,6 @@ export default class App extends React.Component {
               onClick={this.handleClickRight}
             >
               <svg width='18' height='12' version='1.1' viewBox='0 0 18 12'>
-                <title></title>
-                <desc></desc>
                 <g
                   fill='none'
                   fill-rule='evenodd'
@@ -124,16 +131,10 @@ export default class App extends React.Component {
                   stroke-width='1'
                 >
                   <g stroke='#142B6F' stroke-width='2.25'>
-                    <g>
-                      <g>
-                        <g>
-                          <path
-                            d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
-                            transform='translate(-820.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(687.000000, 8.000000)'
-                          ></path>
-                        </g>
-                      </g>
-                    </g>
+                    <path
+                      d='M-2.1938007e-13,4.0010929 L14.8845268,4.0010929 L-2.1938007e-13,4.0010929 Z M14.8845268,4 L10.862069,0.0655737705 L14.8845268,4 Z M14.8845268,4 L10.862069,7.93442623 L14.8845268,4 Z'
+                      transform='translate(-820.000000, -654.000000) translate(135.000000, 530.000000) translate(0.000000, 118.000000) translate(687.000000, 8.000000)'
+                    ></path>
                   </g>
                 </g>
               </svg>
